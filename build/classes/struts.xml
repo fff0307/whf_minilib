@@ -26,6 +26,9 @@
         
         <action name="*usermanageAction" class="minilib.action.usermanageAction" method="{1}">
         	<result name="success">/user/selectbyid_user.jsp</result>
+        	<result name="successadd">/user/AddUser.jsp</result>
+        	<result name="erroradd">/user/AddUser.jsp</result>
+        	
         </action>
         
         

@@ -21,7 +21,7 @@
 </style>	
 
 
-<form class="layui-form layui-form-pane" action="register.action" method="post" name="frm">
+<form class="layui-form layui-form-pane" action="addusermanageAction.action" method="post" name="frm">
 <p>请输入用户信息：<br/><br/>
   <div class="layui-form-item">
     <label class="layui-form-label">用户id</label>
