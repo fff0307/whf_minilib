@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+   <package name="minilibstudent1" extends="struts-default">
+        <action name="login"  class="minilib.action.LoginAction">
+            <result name="error" >/main/login.jsp</result>
+            <result name="success" >/main/main.jsp</result>
+        </action>
+        <action name="register"  class="minilib.action.registerAction">
+            <result name="error">/main/register.jsp</result>
+            <result name="success">/main/login.jsp</result>
+        </action>
+        
+        <action name="*ManageTitlesAction" class="minilib.action.ManageTitlesAction" method="{1}">
+        	<result name="showadditem">/book/Showadditem.jsp</result>
+        	<result name="addsuccess" type="chain">findBookTypeManageTitlesAction</result>
+            <result name="querybook" >/book/QueryBookResults.jsp</result>
+             <result name="nofound" >/book/nofound.jsp</result>
+             <result name="allbook" >/book/showallbook.jsp</result>
+             <result name="afterremove" type="chain">showallbooksManageTitlesAction</result>
+              <result name="Multivariatebooks" >/book/Multivariatebooks.jsp</result>
+             <result name="booktype" >/book/AddBook.jsp</result>
+        </action>
+    </package>
+</struts>
