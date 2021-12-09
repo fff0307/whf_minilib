@@ -23,5 +23,12 @@
               <result name="Multivariatebooks" >/book/Multivariatebooks.jsp</result>
              <result name="booktype" >/book/AddBook.jsp</result>
         </action>
+        
+        <action name="*usermanageAction" class="minilib.action.usermanageAction" method="{1}">
+        	<result name="success">/user/selectbyid_user.jsp</result>
+        </action>
+        
+        
+        
     </package>
 </struts>

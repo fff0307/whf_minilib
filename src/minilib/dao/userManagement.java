@@ -30,13 +30,15 @@ public class userManagement {
 		this.user = user;
 	}
 	
-	public int insertintouser_table(String userid,String username,String password){
+	public int insertintouser_table(String userid,String username,String password,String usersex,String userphonenumber){
 		con=DBUtil.connectDB();
 		try{
-			pst=con.prepareStatement("insert into user_table values(?,?,?)");
+			pst=con.prepareStatement("insert into user_table values(?,?,?,?,?)");
 			pst.setString(1,userid);
 			pst.setString(2,username);
 			pst.setString(3,password);
+			pst.setString(4,usersex);
+			pst.setString(5,userphonenumber);
 			if(pst.executeUpdate()==1) {
 				con.close();
 				return 1;
@@ -75,7 +77,34 @@ public class userManagement {
 		}
 		return "0";
 	}
-		
+	public User selectbyid_user(String userid){
+		con=DBUtil.connectDB();
+		User user = new User();
+		try{
+			
+			String sql="";
+			Connection conn = DBUtil.connectDB();
+			sql = "select * from user_table where userid='"+userid+"'";
+			System.out.println("sql"+sql);
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			ResultSet rst = pstmt.executeQuery();			
+			if(rst.next()) {
+				user.setUserid(rst.getString(1));
+				user.setUsername(rst.getString(2));
+				user.setPassword(rst.getString(3));
+				user.setUsersex(rst.getString(4));
+				user.setUserphonenumber(rst.getString(5));
+				System.out.print(user.getPassword());
+			}
+			
+			
+		}catch(SQLException e){
+			e.getMessage();
+			System.out.print(e.getMessage());
+			
+		}
+		return user;
+	}
 		
 		
 }

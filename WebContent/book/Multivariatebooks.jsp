@@ -68,7 +68,7 @@ import = "java.util.*,minilib.vo.*"
 													</td>
 													<td width="12%">
 														<div align="center">
-															<a href="">删除书目</a>
+															<a href="removebooksManageTitlesAction.action?removebookid=${a.isbn}">删除书目</a>
 														</div>
 													</td>
 												</tr>

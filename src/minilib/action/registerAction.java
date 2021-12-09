@@ -23,9 +23,11 @@ public class registerAction  extends ActionSupport{
 		String username=user.getUsername();
 		String password=user.getPassword();
 		String userid =user.getUserid();
+		String usersex=user.getUsersex();
+		String userphonenumber=user.getUserphonenumber();
 		System.out.print(userid);
 		userManagement users=new userManagement();
-		int result=users.insertintouser_table(userid,username,password);
+		int result=users.insertintouser_table(userid,username,password,usersex,userphonenumber);
 		HttpServletRequest request= ServletActionContext.getRequest();
 		HttpSession session=request.getSession();
 		session.setAttribute("username", user.getUsername());

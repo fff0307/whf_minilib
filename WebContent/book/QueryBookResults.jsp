@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	import = "java.util.*,minilib.vo.*"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix = "c" uri="http://java.sun.com/jstl/core_rt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -36,45 +37,37 @@
 											</div>
 										</td>
 									</tr>
-									
-									<%
-				List list = (List)request.getAttribute("selectedlist");
-											Iterator its = list.iterator();
-											while(its.hasNext()) {
-												Title t = new Title();
-												t = (Title) its.next();	
-									%>
-										<tr bgcolor="#f3f3f3" height="25">
+<c:forEach items="${requestScope.selectedlist}" var="a" varStatus="status" >
+										
+												<tr bgcolor="#f3f3f3" height="25">
 													<td width="10%">
 														<div align="center">
-															<%=t.getIsbn()%>
+															${a.isbn}
 														</div>
 													</td>
 													<td width="13%">
 														<div align="center">
-															 <%=t.getTitle()%>
+															${a.title}
 														</div>
 													</td>
 													<td width="12%">
 														<div align="center">
-															<%=t.getAuthors()%>
+															${a.authors}
 														</div>
 													</td>
 													<td width="12%">
 														<div align="center">
-															<%=t.getPressid()%>
+															${a.pressid}
 														</div>
 													</td>
-													<td width="10%">
+													<td width="12%">
 														<div align="center">
-															<a href="">删除书目</a>
+															<a href="removebooksManageTitlesAction.action?removebookid=${a.isbn}">删除书目</a>
 														</div>
 													</td>
 												</tr>
-									<%
-										}
-								
-									%>
+										</c:forEach>
+															
 								
 	</table>
 
