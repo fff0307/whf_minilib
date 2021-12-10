@@ -28,7 +28,11 @@
         	<result name="success">/user/selectbyid_user.jsp</result>
         	<result name="successadd">/user/AddUser.jsp</result>
         	<result name="erroradd">/user/AddUser.jsp</result>
-        	
+        	<result name="manager">/user/AddUser.jsp</result>
+        	<result name="manager2">/user/QueryUser.jsp</result>
+        	<result name="notmanager">/user/checkidentity.jsp</result>
+        	<result name="manager3" type="chain">showallusersusermanageAction</result>
+        	<result name="allUsers">/user/showalluser.jsp</result>
         </action>
         
         

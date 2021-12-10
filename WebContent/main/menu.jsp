@@ -104,8 +104,9 @@
   <td  onClick="showMenu('06');" align="center">用户管理</td>
   </tr></table>
   <table border="1" id="menu_06" style="display:none;" bgcolor="#f0f0f0" width="100%" class="layui-table">
-    <tr><td align="center"><a href="../user/AddUser.jsp" target="main" title="增加用户">增加用户</a></td></tr>
-    <tr><td align="center"><a href="../user/QueryUser.jsp" target="main" title="查询用户">查询用户</a></td></tr>
+    <tr width="100%" ><td align="center"><a href="../user/checkidentity.jsp" target="main" title="增加用户" width="100%">增加用户</a></td></tr>
+    <tr><td align="center"><a href="../user/checkidentity2.jsp" target="main" title="查询用户">查询用户</a></td></tr>
+    <tr><td align="center"><a href="../user/checkidentity3.jsp" target="main" title="查看用户">查看全部用户</a></td></tr>
   </table>
 
 

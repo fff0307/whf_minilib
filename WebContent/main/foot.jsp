@@ -20,8 +20,17 @@
     <title>无标题文档</title>
   </head>
   <body>
+  <style type="text/css">	
+			p{
+				color:"#f2f2f2";
+				position:relative;
+				top:-10px;
+				background-color:"#F0F0F0";
+			}
+		</style>
+  
   <center>
-          开发单位：辽宁师范大学
+          <p>开发单位：辽宁师范大学
   </center>
   </body>
 </html>

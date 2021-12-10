@@ -15,14 +15,19 @@
 <style type="text/css">
 			body
 			{
+			    background-image: url("../main/44.jpg");
+			    background-size:cover;
 				margin-left: 200px;
 				margin-top:20px;
 			}	
+			.p1{
+				color:white;
+			}
 </style>	
 
 
 <form class="layui-form layui-form-pane" action="addusermanageAction.action" method="post" name="frm">
-<p>请输入用户信息：<br/><br/>
+<p class="p1">请输入用户信息：<br/><br/>
   <div class="layui-form-item">
     <label class="layui-form-label">用户id</label>
     <div class="layui-input-inline">

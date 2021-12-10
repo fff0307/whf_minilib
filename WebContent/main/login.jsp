@@ -36,13 +36,17 @@
 <style type="text/css">
 			body
 			{
-				background-image: url("1.jpg"); 
-				margin-left: 400px;
+				background-image: url("77.jpg"); 
+				background-size:cover;
+				margin-left: 200px;
 				margin-top:50px;
 			}	
+			.p1{
+				color:white;
+			}
 		</style>
 	<form class="layui-form layui-form-pane" action="login.action" method="post" name="frm">
-    小型图书资料管理系统-版本_0.1.0 2021年10月7日<br/><br/>
+  <p class="p1">小型图书资料管理系统-版本_0.1.0 2021年10月7日<br/><br/>
   <div class="layui-form-item">
     <label class="layui-form-label">用户名</label>
     <div class="layui-input-inline">
@@ -63,7 +67,7 @@
    <button class="layui-btn" lay-submit lay-filter="formDemo"  type="submit" value="确认登录" name="login ">立即登录</button>
    <button type="reset" class="layui-btn layui-btn-primary" value="重新填写" >重新填写</button>
   <br/><br/>
-   Copyright@ 2009-2021 版权所有 辽宁师范大学
+  <p class="p1"> Copyright@ 2009-2021 版权所有 辽宁师范大学
    </form>
   </body>
 </html>

@@ -3,9 +3,18 @@ package minilib.dao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.sql.Statement;
+
+
+
+
+
+
 
 //import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.Statement;
+
 import java.sql.Connection;
 
 import minilib.util.DBUtil;
@@ -105,6 +114,53 @@ public class userManagement {
 		}
 		return user;
 	}
+	public List findall()
+	{
+		List users = new ArrayList();
+		try{
+			String sql="";
+			Connection conn = DBUtil.connectDB();
+			sql = "select * from user_table";
+			System.out.println("sql"+sql);
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			ResultSet rst = pstmt.executeQuery();			
+			while(rst.next()){
+				User user = new User();			
+				user.setUserid(rst.getString(1));
+				user.setUsername(rst.getString(2));
+				user.setPassword(rst.getString(3));
+				user.setUsersex(rst.getString(4));	
+				user.setUserphonenumber(rst.getString(5));	
+				users.add(user);
+			}
+		rst.close();
+		pstmt.close();
+		conn.close();
+		}catch(Exception e){
+			
+		}
+		return users;
+	}	
+	
+	
+	public int removeuser(String removeuserid){
+		Connection con=DBUtil.connectDB();
+		try {
+			Statement  st=con.createStatement();
+			int ok = st.executeUpdate("delete from user_table where userid ='"+removeuserid+"'");			
+			if(ok==1) {
+				con.close();
+				return 1;
+			}else {
+				con.close();
+				return 0;
+			}
+		}catch(SQLException e)
+		{
+			
+			System.out.print(e.getMessage());
+			return 0;
+		}
 		
-		
+		}
 }

@@ -7,17 +7,23 @@
 <html>
 <style>
 body{
-background-image:url("backp1.jpg");
+background-image:url("../main/44.jpg");
 background-size:cover;
 text-align:center
-
 }
 </style>
 <style type="text/css">
 			.layui-form-item
 			{
-				margin-left: 340px;
+				margin-left: 540px;
 			}	
+			.frm
+			{
+				margin-top:20px;
+			}
+			.p1{
+			color:white;
+			}
 		</style>
 
 <head>
@@ -30,7 +36,7 @@ text-align:center
  <script src="../layui/layui.js"></script>
 ${message} 
 <!--  通过通配符方式 访问路径中要包含要访问的方法-->
-<form class="layui-form layui-form-pane" action="addTitleManageTitlesAction.action" method="post" name="frm">
+<form class="frm layui-form layui-form-pane" action="addTitleManageTitlesAction.action" method="post" name="frm">
 <!--  
 图书类别：
 <select name="book.typeid">
@@ -70,7 +76,7 @@ ${message}
    <button class="layui-btn layui-btn-warm" lay-submit lay-filter="formDemo"  type="submit" value="确认添加" name="add ">立即添加</button>
    <button type="reset" class="layui-btn layui-btn-warm" value="重新填写" >重新填写</button>
   <br/><br/>
-   Copyright@ 2009-2021 版权所有 辽宁师范大学
+   <p class="p1">Copyright@ 2009-2021 版权所有 辽宁师范大学
 </form>
 
 

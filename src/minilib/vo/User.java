@@ -7,6 +7,7 @@ public class User{
 	private String username;
 	private String password;
 	private String usersex;
+	private String userphonenumber;
 	public String getUsersex() {
 		return usersex;
 	}
@@ -19,7 +20,6 @@ public class User{
 	public void setUserphonenumber(String userphonenumber) {
 		this.userphonenumber = userphonenumber;
 	}
-	private String userphonenumber;
 	public String getPassword() {
 		return password;
 	}
