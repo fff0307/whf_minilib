@@ -9,8 +9,8 @@
 <style type="text/css">
 			body
 			{
-				margin-left: 200px;
-				margin-top:20px;
+				margin-left: 430px;
+				margin-top:80px;
 			}	
 </style>	
 <form class="layui-form layui-form-pane" action="queryusermanageAction.action" method="post" name="frm">

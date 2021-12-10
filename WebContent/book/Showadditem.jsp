@@ -7,20 +7,23 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-String message=(String)request.getAttribute("message");
-Title book=(Title)request.getAttribute("onebook");
-String isbn=book.getIsbn();
-String title=book.getTitle();
-String authors=book.getAuthors();
-String pressid=book.getPressid();
-%>
+<style>
+			body
+			{
+				background-image: url("../main/44.jpg"); 
+				background-size:cover;
+				margin-top:200px;
+			}
+			p{
+			color:white;
+			}
+</style>
 <center>
 <p>已成功添加书目：
-<p>isbn号：<%= isbn%>
-<p>书名：<%= title%>
-<p>作者：<%= authors%>
-<p>pressid：<%= pressid%>
+<p>isbn号：${onebook.isbn}
+<p>书名：${onebook.title}
+<p>作者：${onebook.authors}
+<p>pressid：${onebook.pressid}
 </p>
 </body>
 </html>

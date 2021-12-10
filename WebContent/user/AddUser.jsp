@@ -17,11 +17,16 @@
 			{
 			    background-image: url("../main/44.jpg");
 			    background-size:cover;
-				margin-left: 200px;
+				margin-left: 430px;
 				margin-top:20px;
 			}	
 			.p1{
 				color:white;
+			}
+			image{
+			position:absolute;
+			left:1500px;
+			top:-800px;
 			}
 </style>	
 
@@ -70,7 +75,7 @@
    <button class="layui-btn" lay-submit lay-filter="formDemo"  type="submit" value="确认添加" name="register ">立即注册</button>
    <button type="reset" class="layui-btn layui-btn-primary" value="重新填写" >重新填写</button>
   <br/><br/>
-   
+   <image src="../main/2.gif" style="width:300px;height:300px"></image>
 </form>
   </body>
 </html>

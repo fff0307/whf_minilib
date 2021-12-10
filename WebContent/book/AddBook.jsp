@@ -34,17 +34,9 @@ text-align:center
 
 <body>
  <script src="../layui/layui.js"></script>
-${message} 
+${message}
 <!--  通过通配符方式 访问路径中要包含要访问的方法-->
 <form class="frm layui-form layui-form-pane" action="addTitleManageTitlesAction.action" method="post" name="frm">
-<!--  
-图书类别：
-<select name="book.typeid">
-	<!-- JSTL之核心C标签  -->
-	<!--  <c:forEach items="${requestScope.booktype}" var="booktype" varStatus = "status" >
-	<option value ="${booktype.codeid}">${booktype.codename} </option>
-	</c:forEach>
-</select>-->
     <br/><br/>
   <div class="layui-form-item">
     <label class="layui-form-label">ISBN号</label>

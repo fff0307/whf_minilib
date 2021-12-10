@@ -9,19 +9,30 @@
 <style type="text/css">
 			body
 			{
-				background-image: url("77.jpg"); 
+				background-image: url("../main/3.jpg"); 
 				background-size:cover;
-				margin-left: 200px;
-				margin-top:50px;
+				margin-left: 430px;
+				margin-top:80px;
 			}	
-			.p1{
+			h1{
+				margin-left:80px;
+			}
+			.p1,h1{
 				color:white;
 			}
 </style>
 </head>
 <body>
 <script src="../layui/layui.js"></script>
+<script type="text/javascript">
+ layui.use(['layer', 'form'], function(){
+	  var layer = layui.layer
+	  ,form = layui.form;
+	  layer.msg('操作前需要验证您的管理员身份');
+	});
+</script>
 
+<h1>管理员登录</h1><br/><br/>
 	<form class="layui-form layui-form-pane" action="useridentityusermanageAction.action" method="post" name="frm">
  		 <p class="p1">小型图书资料管理系统-版本_0.1.0 2021年10月7日<br/><br/>
   <div class="layui-form-item">

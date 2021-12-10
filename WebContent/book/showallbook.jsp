@@ -9,6 +9,27 @@
 <title>图书列表</title>
 </head>
 <body>
+<style>
+			a{
+				text-decoration: none;
+			}
+   			  a:LINK {
+       			 color: #393D49;
+    		}
+    		a:HOVER {
+        		color: #5FB878;
+   			}
+   			.a2{
+   			    background-color:#f2f2f2;
+				margin-left:2px;
+				border:1px solid orange;
+				}
+				.div1{
+				margin-left:500px;
+				}
+</style>
+
+
 <table width="100%" border="0" cellspacing="1" cellpadding="0" >
 			                      <tr bgcolor="#fba661" height="25">
 				                        <td width="10%" bgcolor= "#fba661">
@@ -38,7 +59,7 @@
 										</td>
 									</tr>
 									
-<c:forEach items="${requestScope.allTitles}" var="a" varStatus="status" >
+<c:forEach items="${requestScope.pg.pageData}" var="a" varStatus="status" >
 										
 												<tr bgcolor="#f3f3f3" height="25">
 													<td width="10%">
@@ -70,5 +91,13 @@
 				</c:forEach>
 
 </table>
+<br/>
+<div class="div1">
+<a href="dividebooksManageTitlesAction.action?curPage=${pg.firstPage}" class="a2">首页</a>
+<a href="dividebooksManageTitlesAction.action?curPage=${pg.currentPage - 1}" class="a2">上一页</a>
+<a href="dividebooksManageTitlesAction.action?curPage=${pg.currentPage + 1}" class="a2">下一页</a>
+<a href="dividebooksManageTitlesAction.action?curPage=${pg.lastPage}" class="a2">尾页</a>
+当前第${pg.currentPage}页/共${pg.totalPage}页
+</div>
 </body>
 </html>

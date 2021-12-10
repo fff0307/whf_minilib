@@ -19,9 +19,10 @@
             <result name="querybook" >/book/QueryBookResults.jsp</result>
              <result name="nofound" >/book/nofound.jsp</result>
              <result name="allbook" >/book/showallbook.jsp</result>
-             <result name="afterremove" type="chain">showallbooksManageTitlesAction</result>
+             <result name="afterremove" type="chain">dividebooksManageTitlesAction</result>
               <result name="Multivariatebooks" >/book/Multivariatebooks.jsp</result>
              <result name="booktype" >/book/AddBook.jsp</result>
+             <result name="titles" >/book/showallbook.jsp</result>
         </action>
         
         <action name="*usermanageAction" class="minilib.action.usermanageAction" method="{1}">

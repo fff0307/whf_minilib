@@ -143,4 +143,56 @@ public class titleManagement {
 		
 		}
 	
+	/*分页查询*/
+	public List<Title> findall(int currentPage,int pageSize ){
+		List<Title> list = new ArrayList();
+		try{
+			String sql="";
+			Connection conn = DBUtil.connectDB();
+			//select from table limit (页码-1)*每页条数 ， 每页条数
+			sql = "select * from book_table limit ?,?";
+			System.out.println("sql"+sql);
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, (currentPage-1)*pageSize);
+			pstmt.setInt(2, pageSize);
+			ResultSet rst = pstmt.executeQuery();		
+			while(rst.next()){
+				Title title = new Title();			
+				title.setIsbn(rst.getString(1));
+				title.setTitle(rst.getString(2));
+				title.setAuthors(rst.getString(3));
+				title.setPressid(rst.getString(4));					
+				list.add(title);
+			}
+		rst.close();
+		pstmt.close();
+		conn.close();
+		}catch(Exception e){
+			
+		}
+		return list;
+	}
+	
+	
+	/*查询书目数据表中共有多少条记录*/
+	public int bookcount(){
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select count(isbn) from book_table";
+		int total = 0;
+		try {
+		conn = DBUtil.connectDB();
+		pstmt = conn.prepareStatement(sql);
+		rs = pstmt.executeQuery();
+		while(rs.next()){
+		total = rs.getInt(1);
+		}
+		} catch (SQLException e) {
+		e.printStackTrace();
+		}
+		return total;
+
+		}
+	
 }

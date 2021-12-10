@@ -10,6 +10,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 import minilib.dao.titleManagement;
 import minilib.vo.Title;
+import minilib.vo.pagedivide;
 
 
 
@@ -34,17 +35,8 @@ public class ManageTitlesAction extends ActionSupport{
 		System.out.print("1");
 		return restadd;	
 	}
-	/*public String findBookType()throws Exception{
-		HttpServletRequest request = ServletActionContext.getRequest();
-		String message=(String)request.getAttribute("message");
-		Title book=(Title)request.getAttribute("onebook");
-		
-		System.out.print(message);
-		
-		
-		
-		return NONE;
-	}*/
+	
+
 	
 	
 	private String context; 
@@ -117,6 +109,52 @@ public class ManageTitlesAction extends ActionSupport{
 		return rest;
 	
 	}
+
+	public String dividebooks(){
+		String rest = INPUT;
+		HttpServletRequest request = ServletActionContext.getRequest();
+		titleManagement mtmanagement = new titleManagement();
+		int currentPage = 1;
+		try {
+			currentPage=Integer.parseInt(request.getParameter("curPage"));
+			System.out.print(currentPage);
+		if(currentPage<=0) {
+			currentPage = 1;
+		}
+		}catch(Exception e) {
+			currentPage = 1;
+		}
+		int pageSize=10;
+		int totalData=mtmanagement.bookcount();
+		System.out.print(totalData);
+		int totalPage=(int)Math.ceil((double)totalData/pageSize);
+		if(totalPage<=0)
+			totalPage=1;
+		if(currentPage>totalPage) {
+			currentPage=totalPage;
+		}
+		List<Title> titles= mtmanagement.findall(currentPage, pageSize);
+		pagedivide pg=new pagedivide(currentPage,pageSize,totalData);
+		pg.setPageData(titles);
+		request.setAttribute("pg", pg);
+		rest = "titles";
+		return rest;
+	
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }

@@ -43,6 +43,9 @@
     		a:HOVER {
         		color: #5FB878;
    			}
+   			td{
+   			width:200px;
+   			}
 		</style>
 </head>
 
@@ -54,9 +57,11 @@
   </tr>
   </table>
   <table border="1" id="menu_01" style="display:block;" bgcolor="#f0f0f0" width="100%" class="layui-table">
-    <tr><td align="center"><a href="../book/AddBook.jsp" target="main" title="增加图书">增加图书</a></td></tr>
+    <tr><td align="center" ><a href="../book/AddBook.jsp" target="main" title="增加图书">增加图书</a></td></tr>
     <tr><td align="center"><a href="../book/QueryBook.jsp" target="main" title="查询图书">查询图书</a></td></tr>
-     <tr><td align="center"><a href="showallbooksManageTitlesAction.action" target="main" title="查看全部图书">查看全部图书</a></td></tr>
+     <!-- <tr><td align="center"><a href="showallbooksManageTitlesAction.action" target="main" title="查看全部图书">查看全部图书</a></td></tr>
+   -->
+   <tr><td align="center"><a href="dividebooksManageTitlesAction.action" target="main" title="查看全部图书">查看全部图书</a></td></tr>
   </table>
   
   <!-- -->
