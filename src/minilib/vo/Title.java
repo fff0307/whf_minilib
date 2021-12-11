@@ -8,6 +8,13 @@ public class Title {
 	private String pressid;
 	private String typeid;
 	private String codename;
+	private String lendtime;
+	public String getLendtime() {
+		return lendtime;
+	}
+	public void setLendtime(String lendtime) {
+		this.lendtime = lendtime;
+	}
 	public String getAuthors() {
 		return authors;
 	}

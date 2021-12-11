@@ -8,6 +8,11 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.apache.struts2.ServletActionContext;
+
 import minilib.util.DBUtil;
 import minilib.vo.Title;
 
@@ -59,7 +64,30 @@ public class titleManagement {
 		return list;
 	}
 	
-	
+	public Title findbyid(String lendid)
+	{
+		Title title = new Title();
+		try{
+			String sql="";
+			Connection conn = DBUtil.connectDB();
+			sql = "select * from book_table where isbn='"+lendid+"'";
+			System.out.println("sql"+sql);
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			ResultSet rst = pstmt.executeQuery();			
+			if(rst.next()){		
+				title.setIsbn(rst.getString(1));
+				title.setTitle(rst.getString(2));
+				title.setAuthors(rst.getString(3));
+				title.setPressid(rst.getString(4));					
+			}
+		rst.close();
+		pstmt.close();
+		conn.close();
+		}catch(Exception e){
+			
+		}
+		return title;
+	}
 	
 	public List findall()
 	{
@@ -195,4 +223,103 @@ public class titleManagement {
 
 		}
 	
+	public int insertlend_return(String isbn,String title,String authors,String lendtime) {
+		int result = 0;
+		try{
+			Connection conn = DBUtil.connectDB();
+			HttpServletRequest request= ServletActionContext.getRequest();
+			HttpSession session=request.getSession();
+			String username = (String)session.getAttribute("username");
+			String sql = "insert into lend_return(isbn,title,author,lendtime,readername) value(?,?,?,?,?)";
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, isbn);
+			pstmt.setString(2, title);
+			pstmt.setString(3, authors);
+			pstmt.setString(4, lendtime);
+			pstmt.setString(5, username);
+			 result= pstmt.executeUpdate();
+			pstmt.close();
+			conn.close();
+		}catch(SQLException e){
+			System.out.print(e.getMessage());
+		}
+		return result;
+	}
+	
+	
+	public int insertlendlist(String isbn,String title,String authors,String lendtime) {
+		int result = 0;
+		try{
+			Connection conn = DBUtil.connectDB();
+			HttpServletRequest request= ServletActionContext.getRequest();
+			HttpSession session=request.getSession();
+			String username = (String)session.getAttribute("username");
+			String sql = "insert into managelend(isbn,title,authors,lendtime,readername) value(?,?,?,?,?)";
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, isbn);
+			pstmt.setString(2, title);
+			pstmt.setString(3, authors);
+			pstmt.setString(4, lendtime);
+			pstmt.setString(5, username);
+			 result= pstmt.executeUpdate();
+			pstmt.close();
+			conn.close();
+		}catch(SQLException e){
+			System.out.print(e.getMessage());
+		}
+		return result;
+	}
+	
+	
+	
+	public List showlend()
+	{
+		List list = new ArrayList();
+		try{
+			String sql="";
+			Connection conn = DBUtil.connectDB();
+			sql = "select * from lend_return";
+			System.out.println("sql"+sql);
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			ResultSet rst = pstmt.executeQuery();			
+			while(rst.next()){
+				Title title = new Title();			
+				title.setIsbn(rst.getString(1));
+				title.setTitle(rst.getString(2));
+				title.setAuthors(rst.getString(3));
+				title.setLendtime(rst.getString(4));					
+				list.add(title);
+			}
+		rst.close();
+		pstmt.close();
+		conn.close();
+		}catch(Exception e){
+			
+		}
+		return list;
+	}
+	
+	
+	
+	
+	public int deletereturnbook(String removebookid){
+		Connection con=DBUtil.connectDB();
+		try {
+			Statement  st=con.createStatement();
+			int ok = st.executeUpdate("delete from lend_return where isbn ='"+removebookid+"'");			
+			if(ok==1) {
+				con.close();
+				return 1;
+			}else {
+				con.close();
+				return 0;
+			}
+		}catch(SQLException e)
+		{
+			
+			System.out.print(e.getMessage());
+			return 0;
+		}
+		
+		}
 }

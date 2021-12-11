@@ -19,10 +19,15 @@
             <result name="querybook" >/book/QueryBookResults.jsp</result>
              <result name="nofound" >/book/nofound.jsp</result>
              <result name="allbook" >/book/showallbook.jsp</result>
+             <result name="removebook" >/book/removebook.jsp</result>
              <result name="afterremove" type="chain">dividebooksManageTitlesAction</result>
               <result name="Multivariatebooks" >/book/Multivariatebooks.jsp</result>
              <result name="booktype" >/book/AddBook.jsp</result>
              <result name="titles" >/book/showallbook.jsp</result>
+             <result name="lendbook" >/book/lendbook.jsp</result>
+             <result name="showlendbook" >/book/showlendbook.jsp</result>
+             <result name="returnbook">/book/returnbook.jsp</result>
+             <result name="showreturnbook">/book/returnbook.jsp</result>
         </action>
         
         <action name="*usermanageAction" class="minilib.action.usermanageAction" method="{1}">
@@ -34,9 +39,16 @@
         	<result name="notmanager">/user/checkidentity.jsp</result>
         	<result name="manager3" type="chain">showallusersusermanageAction</result>
         	<result name="allUsers">/user/showalluser.jsp</result>
+        	
+        	
         </action>
         
-        
-        
+         <action name="*ManagelendAction" class="minilib.action.ManagelendAction" method="{1}">
+        	<result name="querylend">/managelend_return/showlend.jsp</result>
+        	
+        	
+        	
+        </action>
+       
     </package>
 </struts>

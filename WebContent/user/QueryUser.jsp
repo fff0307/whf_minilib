@@ -9,12 +9,17 @@
 <style type="text/css">
 			body
 			{
-				margin-left: 430px;
+				 background-image: url("../main/44.jpg");
+			    background-size:cover;
+				margin-left: 480px;
 				margin-top:80px;
+			}
+			.p1{
+			color:white;
 			}	
 </style>	
 <form class="layui-form layui-form-pane" action="queryusermanageAction.action" method="post" name="frm">
-<p>请输入用户id：<br/><br/>
+<p class="p1">请输入用户id：<br/><br/>
   <div class="layui-form-item">
     <label class="layui-form-label">用户id</label>
     <div class="layui-input-inline">

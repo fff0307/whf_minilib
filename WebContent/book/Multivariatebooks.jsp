@@ -36,11 +36,6 @@ import = "java.util.*,minilib.vo.*"
 												出版社
 											</div>
 										</td>
-										<td width="13%" bgcolor="#fba661">
-											<div align="center">
-												管理书目
-											</div>
-										</td>
 									</tr>
 									
 <c:forEach items="${requestScope.MultivariateTitles}" var="a" varStatus="status" >
@@ -64,11 +59,6 @@ import = "java.util.*,minilib.vo.*"
 													<td width="12%">
 														<div align="center">
 															${a.pressid}
-														</div>
-													</td>
-													<td width="12%">
-														<div align="center">
-															<a href="removebooksManageTitlesAction.action?removebookid=${a.isbn}">删除书目</a>
 														</div>
 													</td>
 												</tr>
