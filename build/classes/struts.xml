@@ -28,6 +28,10 @@
              <result name="showlendbook" >/book/showlendbook.jsp</result>
              <result name="returnbook">/book/returnbook.jsp</result>
              <result name="showreturnbook">/book/returnbook.jsp</result>
+             <result name="manager">/book/AddBook.jsp</result>
+        	<result name="manager2" type="chain">dividebooksManageTitlesAction.action</result>
+        	<result name="notmanager">/book/checkidentity.jsp</result>
+        	<result name="notmanager2">/book/checkidentity2.jsp</result>
         </action>
         
         <action name="*usermanageAction" class="minilib.action.usermanageAction" method="{1}">

@@ -10,6 +10,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 import minilib.dao.titleManagement;
 import minilib.vo.Title;
+import minilib.vo.User;
 import minilib.vo.pagedivide;
 
 
@@ -264,5 +265,25 @@ public class ManageTitlesAction extends ActionSupport{
 		request.setAttribute("lendlist", lendlist);
 		return rest;
 	
+	}
+	private User user;
+	
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
+	public String useridentity() {
+		if(user.getUsername().equals("1")&&user.getPassword().equals("1"))
+			return "manager";
+		else
+			return "notmanager";
+	}
+	public String useridentity2() {
+		if(user.getUsername().equals("1")&&user.getPassword().equals("1"))
+			return "manager2";
+		else
+			return "notmanager2";
 	}
 }

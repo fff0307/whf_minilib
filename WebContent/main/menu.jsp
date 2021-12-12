@@ -80,7 +80,8 @@
   </tr></table>
   <table border="1" id="menu_03" style="display:none;" bgcolor="#f0f0f0" width="100%" class="layui-table">
    <tr><td align="center" ><a href="../book/checkidentity.jsp" target="main" title="增加图书">增加图书</a></td></tr>
-    <tr><td align="center" ><a href="../book/checkidentity3.jsp" target="main" title="增加图书">修改图书</a></td></tr>
+    <tr><td align="center" ><a href="../book/checkidentity2.jsp" target="main" title="增加图书">删除图书</a></td></tr>
+   
   </table>
   
   <!-- -->  

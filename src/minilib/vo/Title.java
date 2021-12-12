@@ -1,13 +1,11 @@
 package minilib.vo;
 
 public class Title {
-	private String codeid;
+	
 	private String isbn;
 	private String title;
 	private String authors;
 	private String pressid;
-	private String typeid;
-	private String codename;
 	private String lendtime;
 	public String getLendtime() {
 		return lendtime;
@@ -20,12 +18,6 @@ public class Title {
 	}
 	public void setAuthors(String authors) {
 		this.authors = authors;
-	}
-	public String getCodeid() {
-		return codeid;
-	}
-	public void setCodeid(String codeid) {
-		this.codeid = codeid;
 	}
 	public String getIsbn() {
 		return isbn;
@@ -44,17 +36,5 @@ public class Title {
 	}
 	public void setPressid(String pressid) {
 		this.pressid = pressid;
-	}
-	public String getTypeid() {
-		return typeid;
-	}
-	public void setTypeid(String typeid) {
-		this.typeid = typeid;
-	}
-	public String getCodename() {
-		return codename;
-	}
-	public void setCodename(String codename) {
-		this.codename = codename;
 	}
 }

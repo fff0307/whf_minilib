@@ -33,7 +33,9 @@
 </script>
 
 <h1>管理员登录</h1><br/><br/>
-	<form class="layui-form layui-form-pane" action="../book/AddBook.jsp" method="post" name="frm">
+	<!--  <form class="layui-form layui-form-pane" action="../book/AddBook.jsp" method="post" name="frm">-->
+	 <form class="layui-form layui-form-pane" action="useridentityManageTitlesAction.action" method="post" name="frm">
+	
  		 <p class="p1">小型图书资料管理系统-版本_0.1.0 2021年10月7日<br/><br/>
   <div class="layui-form-item">
     <label class="layui-form-label">用户名</label>
